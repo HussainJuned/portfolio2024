@@ -145,7 +145,7 @@ a.logo {
 
 /* Styling Hero Section - Starts */
 .hero {
-    /* background-color: var(--ligt-bg-color); */
+    background-color: var(--ligt-bg-color);
     padding-top: 100px;
     height: 87%;
 }
@@ -162,10 +162,11 @@ a.logo {
 .hero-right {
     flex: 5;
     align-self: end;
-    background-image: url(/images/homeBannerFourBg.png);
+    background-image: url(/images/homeNannerShape.png);
     background-repeat: no-repeat;
-    background-position: center 80px;
-    background-size: 144% 100%;
+    background-size: cover;
+    background-position: 34% 30px;
+    animation: moveIn 3s infinite;
 }
 
 .hero-left h1 {
@@ -227,3 +228,6 @@ a.logo {
 }
 
 /* End of Hero Section */
+@keyframes moveIn {
+    50% {background-position: bottom right;}
+}
