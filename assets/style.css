@@ -1,0 +1,133 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #101010;
+    --secondary-color: #FF6B00;
+    --primary-bg-color: #f5f5f5;
+    --secondary-bg-color: #00008b;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    html {scroll-behavior: smooth;}
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+menu,
+ol,
+ul {
+    padding-left: 0;
+    list-style: none;
+    margin: 0;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2vw;
+    color: var(--primary-color);
+}
+
+.container {
+    width: 85%;
+    margin: auto;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-areas: 
+    'info about'
+    'education experience'
+    'skills skills'
+    'footer footer';
+    gap: 50px 60px;
+    padding: 20px;
+}
+
+.info {
+    grid-area: info;
+}
+
+.education {
+    grid-area: education;
+}
+
+.about {
+    grid-area: about;
+}
+
+.experience {
+    grid-area: experience;
+}
+
+.skills {
+    grid-area: skills;
+}
+
+.footer {
+    grid-area: footer;
+    text-align: center;
+}
+
+header {
+    padding: 25px 0;
+}
+
+/* Styling top menubar starts */
+.main-nav {
+    /* background-color: #ffffff; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-nav menu{
+    list-style-type: none;
+}
+
+.main-nav li{
+    display: inline-block;
+}
+
+.logo img {
+    width: 100px;
+}
+
+.main-nav a{
+    text-decoration: none;
+    display: block;
+    color: var(--primary-color);
+    padding: 10px 20px;
+    transition: 300ms;
+    font-size: 16px;
+}
+
+.main-nav a:hover{
+    color: var(--secondary-color);
+}
+
+.main-nav button {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    padding: 9px 20PX;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 300ms;
+}
+
+.main-nav button:hover {
+    background-color: #fd6b01;
+    color: #f7f7f7;
+}
+/* Styling top menubar ends */
+
+#about img {max-height: 100px;}
