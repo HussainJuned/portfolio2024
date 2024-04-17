@@ -9,10 +9,17 @@
     --secondary-color: #FF6B00;
     --primary-bg-color: #f5f5f5;
     --secondary-bg-color: #00008b;
+    --ligt-bg-color: #FFF3EA;
 }
 
 @media (prefers-reduced-motion: no-preference) {
     html {scroll-behavior: smooth;}
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 img {
@@ -78,7 +85,8 @@ body {
 }
 
 header {
-    padding: 25px 0;
+    /* padding: 25px 0; */
+    height: 100vh;
 }
 
 /* Styling top menubar starts */
@@ -87,6 +95,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 13px 0;
 }
 
 .main-nav menu{
@@ -98,7 +107,7 @@ header {
 }
 
 .logo img {
-    width: 100px;
+    width: 132px;
 }
 
 .main-nav a{
@@ -108,6 +117,10 @@ header {
     padding: 10px 20px;
     transition: 300ms;
     font-size: 16px;
+}
+
+a.logo {
+    padding-left: 0;
 }
 
 .main-nav a:hover{
@@ -130,4 +143,87 @@ header {
 }
 /* Styling top menubar ends */
 
-#about img {max-height: 100px;}
+/* Styling Hero Section - Starts */
+.hero {
+    /* background-color: var(--ligt-bg-color); */
+    padding-top: 100px;
+    height: 87%;
+}
+
+.hero-flex {
+    display: flex;
+    height: 100%;
+}
+
+.hero-left {
+    flex: 7;
+}
+
+.hero-right {
+    flex: 5;
+    align-self: end;
+    background-image: url(/images/homeBannerFourBg.png);
+    background-repeat: no-repeat;
+    background-position: center 80px;
+    background-size: 144% 100%;
+}
+
+.hero-left h1 {
+    font-size: 60px;
+    color: var(--secondary-color);
+    margin: 0px 0 15px;
+}
+
+.hero-left p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0;
+    padding-right: 50px;
+    text-align: justify;
+    color: #606060;
+}
+
+.hero-right img {
+    margin-left: auto;
+}
+
+.hero-left h2 {
+    font-size: 40px;
+    font-weight: normal;
+    padding: 0;
+    margin: 0 0 50px 0;
+    font-family: cursive;
+    color: #2867b2;
+}
+
+.hero-left p:first-child {
+    font-size: 40px;
+}
+
+.hero-left h3 {
+    font-size: 16px;
+    margin-top: 60px;
+    text-transform: uppercase;
+}
+
+.hero-left ul {
+    padding-top: 10px;
+}
+
+.hero-left li {
+    display: inline-block;
+    margin-right: 25px;
+}
+
+.hero-left li a {
+    text-decoration: none;
+    background-color: var(--secondary-color);
+    color: var(--primary-bg-color);
+    font-size: 16px;
+}
+
+.hero-left li a img{
+    width: 36px;
+}
+
+/* End of Hero Section */
