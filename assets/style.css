@@ -35,12 +35,24 @@ ul {
     margin: 0;
 }
 
+figure {
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
 body {
     font-family: "Roboto", sans-serif;
     font-weight: 400;
     font-style: normal;
     font-size: 2vw;
     color: var(--primary-color);
+}
+
+h2 {
+    font-size: 42px;
+    margin: 80px 0 30px;
 }
 
 .container {
@@ -51,12 +63,16 @@ body {
 .grid-container {
     display: grid;
     grid-template-areas: 
+    'portfolio portfolio'
     'info about'
     'education experience'
     'skills skills'
     'footer footer';
     gap: 50px 60px;
-    padding: 20px;
+}
+
+.portfolio {
+    grid-area: portfolio;
 }
 
 .info {
@@ -226,8 +242,71 @@ a.logo {
 .hero-left li a img{
     width: 36px;
 }
-
 /* End of Hero Section */
+
+/* Styling Portfolio Section Start */
+.gallery {
+    display: flex;
+    justify-content: space-between;
+    gap: 25px 25px;
+}
+
+.gallery-item {
+    flex: 1;
+    position: relative;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: none;
+}
+
+.overlay-parent {
+    height: 100%;
+    width: 100%;
+    background: #fff3eae3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 0 15px;
+    opacity: 0;
+    transition: 1000ms;
+}
+
+.overlay h2 {
+    margin-top: 0px;
+    font-size: 25px;
+}
+
+.overlay p {
+    font-size: 18px;
+}
+
+.overlay a {
+    text-decoration: none;
+    color: white;
+    background: #ff6b00;
+    padding: 10px 15px;
+    margin-top: 40px;
+}
+
+.gallery-item:hover .overlay {
+    display: block;
+}
+
+.gallery-item:hover .overlay:hover .overlay-parent{
+    opacity: 1;
+}
+
+/* Styling Portfolio Section End*/
+
+/* Animation */
 @keyframes moveIn {
     50% {background-position: bottom right;}
 }
