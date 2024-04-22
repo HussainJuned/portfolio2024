@@ -65,7 +65,8 @@ h2 {
     grid-template-areas: 
     'portfolio portfolio'
     'info about'
-    'education experience'
+    'education education'
+    'experience experience'
     'skills skills'
     'footer footer';
     gap: 50px 60px;
@@ -81,6 +82,7 @@ h2 {
 
 .education {
     grid-area: education;
+    /* background-color: beige; */
 }
 
 .about {
@@ -303,8 +305,109 @@ a.logo {
 .gallery-item:hover .overlay:hover .overlay-parent{
     opacity: 1;
 }
-
 /* Styling Portfolio Section End*/
+
+/* Styling Education Starts Here */
+.education h3{
+    font-size: 24px;
+    margin: 0;
+}
+.education ul{
+    padding-left: 31px;
+    border-left: 5px solid #17191c;
+    position: relative;
+}
+.education li{
+    padding: 30px 25px;
+    background-color: #fff3ea;
+    margin-bottom: 35px;
+    transition: 400ms;
+}
+
+.education li:hover, .card:hover {
+    background-color: #fe9240;
+    box-shadow: 1px 1px 9px 0px #00000042;
+}
+
+.education p {
+    font-size: 16px;
+    margin: 15px 0 0;
+}
+
+.education li { position: relative;}
+
+.styling-list::before {
+    content: "";
+    width: 31px;
+    height: 5px;
+    background: #17191c;
+    display: block;
+    position: absolute;
+    top: 43px;
+    left: -31px;
+}
+
+.styling-list::after {
+    position: absolute;
+    content: "";
+    width: 20px;
+    height: 20px;
+    border: 5px solid #17191c;
+    border-radius: 100%;
+    top: 36px;
+    left: -44px;
+    background: #ffffff;
+    transition: 400ms;
+}
+
+li:hover .styling-list::after,  .card:hover .styling-list::after {
+    background-color: #fe9240;
+}
+
+/* Styling Education Ends Here */
+
+.experience h3 {
+    font-size: 24px;
+    margin: 0;
+}
+
+.exp-list { 
+    border-left: 5px solid #17191c;
+    padding-left: 31px;
+}
+
+.card {
+    background: antiquewhite;
+    padding: 25px;
+    margin-bottom: 20px;
+    position: relative;
+    transition: 400ms;
+}
+
+
+
+.experience ul{
+    margin: 20px;
+}
+
+.experience li {
+    font-size: 16px;
+    margin-bottom: 15px;
+    list-style: inside;
+}
+
+.experience li::marker {
+    color: white;
+}
+
+.experience li::marker{
+    color: var(--secondary-color);
+}
+
+.experience p {
+    font-size: 16px;
+    margin: 15px 0 0;
+}
 
 /* Animation */
 @keyframes moveIn {
