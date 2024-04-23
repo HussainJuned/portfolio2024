@@ -474,6 +474,14 @@ li:hover .styling-list::after,  .card:hover .styling-list::after {
 	animation: shine .40s;
 }
 
+.footer {
+    background-color: #101010;
+    color: #efefef;
+    font-size: 16px;
+    padding: 15px 0;
+}
+.footer p{}
+
 @keyframes shine {
 	100% {
 		left: 125%;
