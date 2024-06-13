@@ -12,50 +12,58 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
         rel="stylesheet">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
     <header>
         <nav class="main-nav container">
             <a class="logo" href="/">
-                <img src="images/logo.png" alt="Juned">
+                <img src="images/Juned-logo/vector/edited.svg" alt="Juned">
             </a>
             <menu>
                 <li><a href="#about">About Me</a></li>
                 <li><a href="#portfolio">Portfolio</a></li>
                 <li><a href="#education">Education</a></li>
                 <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Skills</a></li>
             </menu>
-            <button href="#contact"> Contact ME </button>
+            <a type="button" class="nav-btn" href="#contact-me"> Contact ME </a>
         </nav>
-        
-        <div class="hero"> <!-- Hero Section starts -->
+
+        <div class="hero" id="about"> <!-- Hero Section starts -->
             <div class="container hero-flex">
                 <div class="hero-left">
                     <p>Hello! I’m</p>
                     <h1>Amdad Hussain Juned</h1>
                     <h2>Full Stack Web Developer</h2>
                     <p>Enthusiastic Full Stack Web Developer with a focus on JavaScript, Vue JS, and Nest JS.
-                    Currently pursuing a Master's in Computer and System Science at Stockholm University.
-                    Specialized in PHP Laravel as a Freelance Web Developer on Fiverr.</p>
+                        Currently pursuing a Master's in Computer and System Science at Stockholm University.
+                        Specialized in PHP Laravel as a Freelance Web Developer on Fiverr.</p>
                     <h3>Find me in</h2>
-                    <ul>
-                        <li><a href="https://linkedin.com/in/hussain-juned" target="_blank">
-                            <img src="images/linkedin_icon.png" alt="linkedin">
-                            </a></li>
-                         <li><a href="https://github.com/HussainJuned" target="_blank"><img src="images/github_icon.png" alt="github"></a></li>                            
-                     </ul>    
+                        <ul>
+                            <li><a href="https://linkedin.com/in/hussain-juned" target="_blank">
+                                    <img src="images/linkedin_icon.png" alt="linkedin">
+                                </a></li>
+                            <li><a href="https://github.com/HussainJuned" target="_blank"><img
+                                        src="images/github_icon.png" alt="github"></a></li>
+                        </ul>
                 </div>
                 <div class="hero-right">
                     <img src="images/juned.png" alt="Amdad Hussain Juned">
                 </div>
             </div>
-        </div><!-- End of Hero Section -->     
+        </div><!-- End of Hero Section -->
     </header>
 
     <main class="grid-container container">
 
-        <section class="portfolio">
+        <section class="portfolio" id="portfolio">
             <h2>My Recent Works</h2>
             <div class="gallery">
                 <article class="gallery-item">
@@ -65,7 +73,8 @@
                     <div class="overlay">
                         <div class="overlay-parent">
                             <h2>Project Title 1</h2>
-                            <p>This is my dream project. Technologies used in this project are Html, Css, JavaScript </p>
+                            <p>This is my dream project. Technologies used in this project are Html, Css, JavaScript
+                            </p>
                             <a href="#" target="_blank">View project</a>
                         </div>
                     </div>
@@ -77,7 +86,8 @@
                     <div class="overlay">
                         <div class="overlay-parent">
                             <h2>Project Title 2</h2>
-                            <p>This is my dream project. Technologies used in this project are Html, Css, JavaScript </p>
+                            <p>This is my dream project. Technologies used in this project are Html, Css, JavaScript
+                            </p>
                             <a href="#" target="_blank">View project</a>
                         </div>
                     </div>
@@ -89,34 +99,14 @@
                     <div class="overlay">
                         <div class="overlay-parent">
                             <h2>Project Title 3</h2>
-                            <p>This is my dream project. Technologies used in this project are Html, Css, JavaScript </p>
+                            <p>This is my dream project. Technologies used in this project are Html, Css, JavaScript
+                            </p>
                             <a href="#" target="_blank">View project</a>
                         </div>
                     </div>
                 </article>
             </div>
         </section>
-
-        <!-- <section class="info">
-            <h1>Amdad Hussain Juned</h1>
-            <address>
-                <p>Email: <a href="mailto:ahjuned.se@gmail.com">ahjuned.se@gmail.com</a></p>
-                <p>LinkedIn: <a href="https://www.linkedin.com/in/hussain-juned">linkedin.com/in/hussain-juned</a></p>
-                <p>Phone: +46739042909</p>
-                <p>Address: Narviksgatan 7, 16433 Kista, Stockholm</p>
-            </address>
-        </section> -->
-
-        <!-- <section class="about" id="about">
-            <h2>About Me</h2>
-            <p>
-                Enthusiastic Full Stack Web Developer with a focus on JavaScript, Vue JS, and Nest JS.
-                Currently pursuing a Master's in Computer and System Science at Stockholm University.
-                Gained practical experience in Rest API development, responsive web design, and AWS deployment
-                during a 3-month internship. Specialized in PHP Laravel as a Freelance Web Developer on Fiverr.
-                Eager to bring technical skills and creativity to a collaborative development team.
-            </p>
-        </section> -->
 
         <section class="education container" id="education">
             <h2>Education</h2>
@@ -125,13 +115,13 @@
                     <div class="styling-list">
                         <h3>Master's in Computer and System Science</h3>
                         <p><strong>Stockholm University, Sweden</strong>
-                             (<time datetime="2019">2019</time> - current)</p>
+                            (<time datetime="2019">2019</time> - current)</p>
                     </div>
                 </li>
                 <li>
                     <div class="styling-list">
                         <h3>Bachelor of Science in Computer Science and Engineering</h3>
-                        <p><strong>Leading University, Bangladesh</strong> 
+                        <p><strong>Leading University, Bangladesh</strong>
                             (<time datetime="2014">2014</time> - <time datetime="2018">2018</time>)</p>
                     </div>
                 </li>
@@ -141,6 +131,7 @@
         <section class="experience container" id="experience">
             <h2>Experience</h2>
             <div class="exp-list">
+
                 <article class="card">
                     <div class="styling-list">
                         <h3>Fiverr.com Full stack web developer</h3>
@@ -152,7 +143,7 @@
                         </ul>
                     </div>
                 </article>
-    
+
                 <article class="card">
                     <div class="styling-list">
                         <h3>3 months Internship as a full stack developer</h3>
@@ -164,6 +155,7 @@
                         </ul>
                     </div>
                 </article>
+
             </div>
         </section>
 
@@ -171,7 +163,7 @@
             <h2>My skills</h2>
             <ul>
                 <li><img src="images/html-logo.png" alt="html logo"></li>
-                <li><img src="images/css-logo.png" alt="css logo"></li> 
+                <li><img src="images/css-logo.png" alt="css logo"></li>
                 <li><img src="images/bootstrap-logo.png" alt="bootstrap-logo"></li>
                 <li><img src="images/JavaScript-logo.png" alt="JavaScript logo"></li>
                 <!-- <li>, jQuery, Vue JS, Node JS, Nest JS</li> -->
@@ -184,10 +176,60 @@
                 <li><img src="images/mysql_logo.png" alt="mysql_logo"></li>
                 <li><img src="images/github-logo.png" alt="github logo"></li>
             </ul>
-            </ssection>
+        </section>
+
+        <!-- Cotact-me Section -->
+        <section class="contact-me" id="contact-me">
+            <h2>Contact Me</h2>
+            <div class="contact-me-box">
+                <address class="contact-me-box-address">
+                    <h4>Get in touch with me now!</h4>
+                    <div class="contact-with-icons d-flex justify-content-space-arround align-items-center">
+                        <div class="icon-bg-orange">
+                            <img src="images/icon-email-100.png" alt="email-icon">
+                        </div>
+                        <div>
+                            <h3>Email</h3>
+                            <p>amdad.juned@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-with-icons">
+                        <div class="icon-bg-orange">
+                            <img src="images/icon-phone-100.png" alt="email-icon">
+                        </div>
+                        <div>
+                            <h3>Phone</h3>
+                            <p>+46 76 000 0000</p>
+                        </div>
+                    </div>
+                </address>
+                <form action="mailto:amdad.juned@gmail.com" method="post" enctype="text/plain"
+                    class="contact-me-box-form">
+                    <div class="form-group">
+                        <!-- <label for="name">Name</label> -->
+                        <input type="text" id="name" name="name" placeholder="Name" required>
+                    </div>
+                    <div class="form-group">
+                        <!-- <label for="email">Email</label> -->
+                        <input type="email" id="email" placeholder="Email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <!-- <label for="subject">Subject</label> -->
+                        <input type="text" id="subject" placeholder="Subject" name="subject" required>
+                    </div>
+                    <div class="form-group">
+                        <!-- <label for="message">Message</label> -->
+                        <textarea id="message" placeholder="Type your message here" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Send Me Message</button>
+                </form>
+            </div>
+        </section>
+        <!-- End of: cotact-me section -->
+
     </main>
     <footer class="footer">
-        <p>&copy; 2024, All right reserved by: <strong>Amdad Hussain Juned</strong></p>
+        <p>Developed by: <strong>Amdad Hussain Juned</strong></p>
     </footer>
     <script src="assets/script.js"></script>
 </body>

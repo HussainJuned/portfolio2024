@@ -1,0 +1,14 @@
+
+Hope you enjoy your new logo, here are the people that
+made your beautiful logo happen :)
+font name: Butler_Bold
+font link: http://fabiandesmet.com/portfolio/butler-font/
+font author: Fabian De Smet
+font author site: http://fabiandesmet.com/
+
+
+icon designer: useiconic.com
+icon designer link: /useiconic.com
+        
+{"bg":"#F56B11","icon":"#FFFFFF","font":"#ffffff","slogan":"#ffffff"}
+      
