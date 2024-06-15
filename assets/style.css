@@ -21,6 +21,11 @@
     }
 }
 
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
 html,
 body {
     height: 100%;
@@ -61,8 +66,8 @@ body {
 }
 
 h2 {
-    font-size: 42px;
-    margin: 90px 0 30px;
+    font-size: 2.6rem;
+    margin: 3.8rem 0 2rem;
 }
 
 .container {
@@ -126,7 +131,7 @@ section#portfolio {}
 
 header {
     /* padding: 25px 0; */
-    /* height: 100vh; */
+    height: auto;
 }
 
 /* Styling top menubar starts */
@@ -203,16 +208,17 @@ a.logo {
     /* background-color: var(--ligt-bg-color); */
     background-color: #f4f4f4;
     padding-top: 30px;
-    height: 87svh;
+    height: auto;
     margin-top: 30px;
 }
 
 .hero-flex {
     display: flex;
-    height: 100%;
-    column-gap: 60px;
+    row-gap: 4rem;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    /* padding-block: 1rem; */
 }
 
 .hero-left {
@@ -224,7 +230,7 @@ a.logo {
 }
 
 .hero-right {
-    flex: 4;
+    /* flex: 4; */
     /* align-self: end; */
     background-image: url(/images/homeNannerShape.png);
     background-repeat: no-repeat;
@@ -234,19 +240,19 @@ a.logo {
 }
 
 .hero-left h1 {
-    font-size: 55px;
+    font-size: 2.4rem;
     color: var(--secondary-color);
-    margin: 0px 0 16px;
-    line-height: 64px;
+    margin: 0px 0 1rem;
+    line-height: 4rem;
 }
 
 .hero-left p {
-    font-size: 20px;
-    line-height: 2;
+    font-size: 1.2rem;
+    line-height: 2.5rem;
     margin: 0;
-    padding-right: 20px;
+    padding-right: 0;
     text-align: justify;
-    color: #606060;
+    color: #3f3f3f;
 }
 
 .hero-right img {
@@ -254,10 +260,10 @@ a.logo {
 }
 
 .hero-left h2 {
-    font-size: 32px;
+    font-size: 2rem;
     font-weight: normal;
     padding: 0;
-    margin: 0 0 40px 0;
+    margin: 0 0 2.4rem 0;
     font-family: "Roboto", sans-serif;
     color: #393939;
 }
@@ -301,10 +307,11 @@ a.logo {
     display: flex;
     justify-content: space-between;
     gap: 25px 25px;
+    flex-wrap: wrap;
 }
 
 .gallery-item {
-    flex: 1;
+    flex: 0 0 100%;
     position: relative;
 }
 
@@ -360,7 +367,7 @@ a.logo {
 
 /* Styling Education Starts Here */
 .education h3 {
-    font-size: 24px;
+    font-size: 1.2rem;
     margin: 0;
 }
 
@@ -397,8 +404,8 @@ a.logo {
 
 
 .education p {
-    font-size: 16px;
-    margin: 15px 0 0;
+    font-size: 1rem;
+    margin: 1rem 0 0;
 }
 
 .education li {
@@ -485,13 +492,13 @@ li:hover .styling-list::after,
 
 .skills ul {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    gap: 50px;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
     justify-content: center;
     justify-items: center;
     align-items: center;
     background: #efefef;
-    padding: 50px;
+    padding: 2.2rem;
 }
 
 .skills li {
@@ -515,7 +522,7 @@ li:hover .styling-list::after,
 }
 
 .skills h2 {
-    margin: 60px 0 50px;
+    margin: 3.8rem 0 3rem;
     text-align: center;
     text-transform: capitalize;
 }
@@ -546,11 +553,12 @@ li:hover .styling-list::after,
 /* Contact Me Section */
 .contact-me {
     grid-area: contact-me;
-    height: 100vh;
+    height: auto;
 }
 
 .contact-me h2 {
     text-align: center;
+    margin: 9rem 0 0;
 }
 
 
@@ -560,14 +568,15 @@ li:hover .styling-list::after,
     align-items: start;
     gap: 50px;
     padding: 50px 0;
+    flex-direction: column;
 }
 
 .contact-me-box h4 {
     font-style: normal;
     margin-top: 0;
-    margin-bottom: 32px;
-    font-size: 42px;
-    line-height: 63px;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    line-height: 4rem;
 }
 
 .contact-me-box-address {
@@ -595,7 +604,7 @@ li:hover .styling-list::after,
 }
 
 .contact-with-icons img {
-    max-width: 30px;
+    max-width: 2rem;
 }
 
 .icon-bg-orange {
@@ -611,8 +620,8 @@ li:hover .styling-list::after,
 }
 
 .contact-with-icons h3 {
-    margin-bottom: 5px;
-    font-size: 1.5rem;
+    margin-bottom: 0;
+    font-size: 1.2rem;
 }
 
 .contact-with-icons p {
@@ -643,15 +652,16 @@ textarea {
 
 .contact-me-box-form .btn {
     color: #fff;
-    padding: 10px 32px;
+    padding: 0.6rem 2rem;
     background-color: var(--secondary-color);
-    border-radius: 6px;
-    font-size: 21px;
+    border-radius: 4px;
+    font-size: 1.2rem;
     font-weight: 500;
     text-transform: capitalize;
     border: 1px solid transparent;
     transition: all .3s;
     cursor: pointer;
+    float: right;
 }
 
 .contact-me-box-form .btn:hover {
