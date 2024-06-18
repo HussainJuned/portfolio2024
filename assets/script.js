@@ -41,10 +41,39 @@ document.addEventListener('click', function (event) {
         menu.classList.remove(classNameShowMenu);
         return;
     }
+});
 
-    // // If the click event did not originate from the button or a descendant of the button or the menu, hide the menu
-    // if (event.target !== navigateBtn && menu.classList.contains(classNameShowMenu)) {
-    //     console.log('Main Doc: remove show-menu class from menu');
-    //     menu.classList.remove(classNameShowMenu);
-    // }
+
+// Select the nav element
+const nav = document.querySelector('.main-nav');
+
+// Create a placeholder element
+const placeholder = document.createElement('div');
+
+// Add a scroll event listener to the window
+window.addEventListener('scroll', function() {
+    // Get the current scroll position
+    let scrollTop = window.scrollY;
+
+    // If the scroll position is greater than the nav's height
+    if (scrollTop > nav.offsetHeight/2) {
+        // If the placeholder is not already in the document, insert it before the nav
+        if (!placeholder.parentNode) {
+            placeholder.style.height = `${nav.offsetHeight}px`;
+            nav.parentNode.insertBefore(placeholder, nav);
+        }
+
+        // Add the 'sticky' class to the nav
+        nav.classList.add('sticky');
+    } 
+    // If the scroll position is less than or equal to the nav's height
+    else if (scrollTop <= nav.offsetHeight/2) {
+        // If the placeholder is in the document, remove it
+        if (placeholder.parentNode) {
+            placeholder.parentNode.removeChild(placeholder);
+        }
+
+        // Remove the 'sticky' class from the nav
+        nav.classList.remove('sticky');
+    }
 });
