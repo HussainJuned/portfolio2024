@@ -203,7 +203,8 @@ a.logo {
     background: #fff3ea;
 }
 
-.main-nav a:hover {
+.main-nav a:hover,
+.active {
     background-color: var(--secondary-color);
     color: #ffffff;
     transition: background-color 300ms;
