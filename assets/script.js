@@ -134,7 +134,7 @@ const observer = new IntersectionObserver(function(entries) {
             }
         }
     });
-}, { threshold: 0.5 });
+},  { rootMargin: '0px 0px -75% 0px', threshold: 0.0 });
 
 // Observe each section
 sections.forEach(function(section) {
