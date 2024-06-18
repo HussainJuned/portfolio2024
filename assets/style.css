@@ -144,32 +144,59 @@ header {
     margin-top: 30px;
 }
 
-.main-nav menu {
+.main-nav .main-menu {
     list-style-type: none;
-    display: none;
+    /* display: none; */
+    border-radius: 4px;
+}
+
+.main-menu {
+    display: flex;
+    position: fixed;
+    top: 0;
+    text-align: right;
+    flex-direction: column;
+    right: -37svh;
+    /* Initially hide the menu by setting right to -37svh */
+    width: 37svh;
+    background-color: #2867b2;
+    z-index: 100;
+    box-shadow: 0 0 10px 0px #0000001f;
+    padding-block: 4rem;
+    bottom: 0;
+    color: white;
+    justify-content: center;
+    transition: right 0.5s ease-in-out;
+    /* Add a transition to the right property */
 }
 
 .main-nav li {
     display: inline-block;
+    /* padding: 8px 0px; */
+    /* border-right: 1px solid #4b4b4b; */
 }
 
 .logo img {
-    width: 140px;
+    width: 70px;
+    max-width: 100%;
 }
 
 .main-nav a {
     text-decoration: none;
     display: block;
-    color: var(--primary-color);
+    color: #ffffff;
     padding: 7px 21px;
     transition: 300ms;
     font-size: 1.2rem;
     border-radius: 4px;
-    font-size: 18px;
+    font-size: 0.9rem;
+    /* border-right: 1px solid #c4c4c4; */
 }
 
 a.logo {
-    padding: 0;
+    padding: 8px;
+    box-shadow: 1px 1px 10px #00000033;
+    background: #fff3ea;
 }
 
 .main-nav a:hover {
@@ -220,7 +247,8 @@ a.logo {
     padding-block: 4rem;
     bottom: 0;
     color: white;
-    justify-content: center;
+    justify-content: start;
+    padding-top: 6rem;
 }
 
 .main-menu.show-menu a {
@@ -615,6 +643,7 @@ li:hover .styling-list::after,
     gap: 4rem;
     padding: 2rem 0;
     flex-direction: column;
+    flex-wrap: wrap;
 }
 
 .contact-me-box h4 {
@@ -642,11 +671,12 @@ li:hover .styling-list::after,
 }
 
 .contact-with-icons {
-    column-gap: 45px;
+    column-gap: 1rem;
     display: flex;
     align-items: center;
     justify-content: left;
     margin-bottom: 32px;
+    flex-wrap: wrap;
 }
 
 .contact-with-icons img {
@@ -741,6 +771,14 @@ textarea {
 
 /* Media Queries */
 
+@media only screen and (min-width: 375px) {
+    .contact-with-icons {
+        column-gap: 1.3rem;
+    }
+}
+
+@media only screen and (min-width: 410px) {}
+
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
     html {
@@ -757,6 +795,10 @@ textarea {
 
     .skills ul {
         grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .contact-with-icons {
+        column-gap: 1.5rem;
     }
 }
 
@@ -794,6 +836,10 @@ textarea {
     .contact-me-box {
         flex-direction: row;
     }
+
+    .logo img {
+        width: 100px;
+    }
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
@@ -823,7 +869,37 @@ textarea {
         gap: 1rem;
     }
 
-    .main-nav menu {
+    .main-menu {
         display: flex;
+        position: static;
+        text-align: center;
+        flex-direction: row;
+        width: auto;
+        background-color: #075695;
+        padding-block: inherit;
+        color: inherit;
+        justify-content: center;
+        transition: inherit;
+        /* Add a transition to the right property */
+        box-shadow: 6px 9px 20px 0px #bfbfbf;
+        padding: 0 8px;
+        color: white;
+    }
+
+    .main-nav li {
+        padding: 8px 0px;
+        border-right: 1px solid #4b4b4b;
+    }
+
+    .main-nav .main-menu li:nth-last-child(3) {
+        border: none;
+    }
+
+    .logo img {
+        width: 140px;
+    }
+
+    .contact-with-icons {
+        column-gap: 2rem;
     }
 }

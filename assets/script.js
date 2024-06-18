@@ -28,6 +28,10 @@ document.addEventListener('click', function (event) {
     if (navigateBtn.contains(event.target)) {
         return;
     }
+    // If the click event's target is outside the menu, hide the menu
+    if (!menu.contains(event.target)) {
+        menu.classList.remove('show-menu');
+    }
 
     // If the click event originated from a child or grandchild of the menu, hide the menu
     var parent = event.target.parentElement;
