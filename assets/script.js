@@ -5,7 +5,8 @@ const navigateBtn = document.getElementById('navigate-btn');
 
 const classNameShowMenu = 'show-menu';
 
-function showMenu() {
+function showMenu(e) {
+  e.preventDefault();
   menu.classList.add(classNameShowMenu); 
 }
 
