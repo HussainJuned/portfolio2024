@@ -26,14 +26,17 @@
             <a class="logo" href="/">
                 <img src="images/Juned-logo/vector/edited.svg" alt="Juned">
             </a>
-            <menu>
+            <menu class="main-menu" id="toggle-able-menu">
                 <li><a href="#about">About Me</a></li>
                 <li><a href="#portfolio">Portfolio</a></li>
                 <li><a href="#education">Education</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#skills">Skills</a></li>
+                <li class="hide-when-large"><a href="#contact-me"> Contact ME </a></li>
+                <li class="hide-when-large"><button type="button" id="menu-close-btn"> X </button></li>
             </menu>
-            <a type="button" class="nav-btn" href="#contact-me"> Contact ME </a>
+            <a type="button" class="nav-btn hide-when-small" href="#contact-me"> Contact ME </a>
+            <a type="button" class="nav-btn hide-when-large" href="#" id="navigate-btn"> Navigate </a>
         </nav>
 
         <div class="hero" id="about"> <!-- Hero Section starts -->

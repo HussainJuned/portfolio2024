@@ -202,6 +202,50 @@ a.logo {
     border-color: #2c1200;
 }
 
+.main-nav .hide-when-small {
+    display: none;
+}
+
+.main-menu.show-menu {
+    display: flex;
+    position: fixed;
+    top: 0;
+    text-align: right;
+    flex-direction: column;
+    right: 0;
+    width: 37svh;
+    background-color: #2867b2;
+    z-index: 100;
+    box-shadow: 0 0 10px 0px #0000001f;
+    padding-block: 4rem;
+    bottom: 0;
+    color: white;
+    justify-content: center;
+}
+
+.main-menu.show-menu a {
+    width: 100%;
+    margin-top: 2rem;
+    padding-right: 4rem;
+    color: white;
+    font-size: 1.3rem;
+}
+
+.main-menu.show-menu li:first-child a {
+    margin-top: 0;
+}
+
+button#menu-close-btn {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    z-index: 101;
+    padding: 10px 15px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
 /* Styling top menubar ends */
 
 /* Styling Hero Section - Starts */
@@ -754,6 +798,15 @@ textarea {
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
+
+    .main-nav .hide-when-large {
+        display: none;
+    }
+
+    .main-nav .hide-when-small {
+        display: block;
+    }
+
     .gallery {
         gap: 1.5rem;
     }
