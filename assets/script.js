@@ -114,11 +114,27 @@ const sections = navItems.map(function(navItem) {
 
 console.log("Sections: ", sections);
 
-// Create an intersection observer
-const observer = new IntersectionObserver(function(entries) {
-    // For each entry
-    entries.forEach(function(entry) {
-        // If the entry is intersecting
+function removeActiveClass() {
+    sections.forEach(function(section) {
+        if (section) {
+            section.classList.remove('active');
+        }
+    });
+}
+
+let lastScrollY = window.scrollY;
+let isScrollingDown = true;
+
+window.addEventListener('scroll', () => {
+  isScrollingDown = (window.scrollY > lastScrollY);
+  lastScrollY = window.scrollY;
+});
+
+const observerScrollingDown = new IntersectionObserver(entries => {
+    if (!isScrollingDown) return;
+    // handle for scrolling down
+  entries.forEach(entry => {
+    // If the entry is intersecting
         if (entry.isIntersecting) {
             // Remove the 'active' class from all nav items
             navItems.forEach(function(navItem) {
@@ -134,10 +150,47 @@ const observer = new IntersectionObserver(function(entries) {
                 navItem.classList.add('active');
             }
         }
-    });
-},  { rootMargin: '0px 0px -75% 0px', threshold: 0.0 });
+  });
+}, { rootMargin: '0px 0px -60% 0px', threshold: 0.0 });
 
-// Observe each section
-sections.forEach(function(section) {
-    observer.observe(section);
+const observerScrollingUp = new IntersectionObserver(entries => {
+    if (isScrollingDown) return;
+    // handle for scrolling up
+  entries.forEach(entry => {
+    // If the entry is intersecting
+        if (entry.isIntersecting) {
+            // Remove the 'active' class from all nav items
+            navItems.forEach(function(navItem) {
+                if (navItem.children[0]) {
+                    navItem.children[0].classList.remove('active');
+                }
+            });
+
+            // Add the 'active' class to the nav item corresponding to the entry
+            const id = entry.target.getAttribute('id');
+            const navItem = document.querySelector(`.main-nav .main-menu li a[href="#${id}"]`);
+            if (navItem) {
+                navItem.classList.add('active');
+            }
+        }
+  });
+}, { rootMargin: '0px 0px 0% 0px', threshold: 0.6 });
+
+// apply observers to each section
+sections.forEach(section => {
+  observerScrollingDown.observe(section);
+  observerScrollingUp.observe(section);
 });
+
+// const observer = new IntersectionObserver((entries) => {
+//   entries.forEach(entry => {
+//     if (entry.isIntersecting) {
+//       // Do something when the section is in view
+//       console.log(`${entry.target.id} is in view!`);
+//     }
+//   });
+// });
+
+// sections.forEach(section => {
+//   observer.observe(section);
+// });
