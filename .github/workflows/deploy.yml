@@ -3,7 +3,7 @@ name: Deploy to Namecheap Server
 on:
   push:
     branches:
-      - master  # Adjust to your main branch name
+      - main  # Adjust to your main branch name
 
 jobs:
   deploy:
@@ -11,10 +11,10 @@ jobs:
     
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
-        
+        uses: actions/checkout@v2.5.0  # Replace with the latest version that supports Node.js 20
+
       - name: Set up SSH
-        uses: webfactory/ssh-agent@v0.5.3
+        uses: webfactory/ssh-agent@v0.7.0  # Replace with the latest version that supports Node.js 20
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
           
