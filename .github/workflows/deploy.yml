@@ -23,3 +23,6 @@ jobs:
 
       - name: SSH connection test
         run: ssh -o StrictHostKeyChecking=no -p 21098 junecqhi@198.54.114.247 echo "SSH connection successful"
+
+      - name: Deploy to Namecheap server
+        run: scp -r -P 21098 * junecqhi@198.54.114.247:/home/junecqhi/public_html/
