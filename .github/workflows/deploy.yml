@@ -11,10 +11,10 @@ jobs:
     
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2.5.0  # Replace with the latest version that supports Node.js 20
+        uses: actions/checkout@v4  # Replace with the latest version that supports Node.js 20
 
       - name: Set up SSH
-        uses: webfactory/ssh-agent@v0.7.0  # Replace with the latest version that supports Node.js 20
+        uses: webfactory/ssh-agent@v0.9  # Replace with the latest version that supports Node.js 20
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
           
