@@ -14,12 +14,12 @@ jobs:
         uses: actions/checkout@v4  # Replace with the latest version that supports Node.js 20
       
       - name: Set up SSH key
-        uses: webfactory/ssh-agent@v0.5.3
-        with:
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-          ssh-passphrase: ${{ secrets.SSH_PASSPHRASE }}
-          ssh-know-hosts: |
-            198.54.114.247 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDmhxEyorLX52fJcRKP77p4YK0p2HApk5FhgXHnIvsYxzg+99qTDRxBtzzUU2IUjgG+Q7eeoHTq5R4zP2a2rG0T8cQ9iqvDRXyKfcFLjHDEr/f7efmmd+ZxeBso1qh2mF33y24x1LLqrYhDMMJXiYfjT/+YkaX/x98nWjs1QBBmSEsUQhKmWGaWlU1DoEjeBk4Lg4lsLZrvPqNswHbul7IOpaG+joOv95In/sknQ0kegWVzEGgnbCoi/BUNbwhyy3ZG9vob6Yxr54SOKWSPoFE8oY+wRzA0ztzXW1biOIFCLMSlXC1/xF9c04uNoA/3lTwDlPcBu3Rx+MbuoMy/ivV7  # Replace with your server's IP and SSH key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -t rsa 198.54.114.247 >> ~/.ssh/known_hosts
+          chmod 644 ~/.ssh/known_hosts
           
       - name: Deploy to Namecheap Server
         run: |
