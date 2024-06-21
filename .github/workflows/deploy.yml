@@ -3,27 +3,25 @@ name: Deploy to Namecheap Server
 on:
   push:
     branches:
-      - master  # Adjust to your main branch name
+      - master  # adjust branch as needed
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4  # Replace with the latest version that supports Node.js 20
 
-      - name: Create SSH directory if not exists
-        run: |
-          mkdir -p ~/.ssh || true
-      
-      - name: Set up SSH key
-        run: |
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan -t rsa 198.54.114.247 >> ~/.ssh/known_hosts
-          chmod 644 ~/.ssh/known_hosts
-          
-      - name: Deploy to Namecheap Server
-        run: |
-          scp -r -P 21098 * junecqhi@198.54.114.247:/home/junecqhi/public_html/ && git pull
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install SSH client
+        run: sudo apt-get update && sudo apt-get install openssh-client -y
+
+      - name: Add SSH private key to SSH agent
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+          # Uncomment the following line if you need to provide the passphrase
+          ssh-passphrase: ${{ secrets.SSH_PASSPHRASE }}
+
+      - name: SSH connection test
+        run: ssh -o StrictHostKeyChecking=no -p 21098 username@198.54.114.247 echo "SSH connection successful"
