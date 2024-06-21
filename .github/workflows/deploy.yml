@@ -13,16 +13,13 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4  # Replace with the latest version that supports Node.js 20
 
-      - name: Set up SSH
-        uses: webfactory/ssh-agent@v0.9.0 # Replace with the latest version that supports Node.js 20
+      - name: Set up SSH key
+        uses: webfactory/ssh-agent@v0.5.3
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-
-      - name: Add server to known_hosts
-        run: |
-          mkdir -p ~/.ssh
-          ssh-keyscan -p 21098 198.54.114.247 >> ~/.ssh/known_hosts
+          ssh-known-hosts: |
+            198.54.114.247 ssh-rsa ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDmbOb2VqA6c3cnVo4ibm5HA8RPHHwqxKgW6p/iusi+dIOoEdVAmQBrRNXePcnFV3DaCOYwcGtrAsmBsN6e7J8d8cVurbk93OVA+K5j6nERonnK6svo+koJBCQEdGslNzk05mZYbhkPSRH+O1Cq8kH7G2AeJt7qC0qMPbv4R3GhUcNoU7HjWFyf19qdC7Uy+MtNDfti99NcfuIRV1hC07URHNWM21N2Qe1tZNV0gsAncKLe/HFWRnVPKt/n9xevG+8PeW/A/0inVTT+yXa2mPLLMgXPNryxag3XMeuz+DUvo8zG7lm9pqSl6rG3uvnVBgKVzWhKMNCDDtaRQ7SklJ/r  # Replace with your server's IP and SSH key
           
       - name: Deploy to Namecheap Server
         run: |
-          scp -r -P 21098 * junecqhi@198.54.114.247:/home/junecqhi/public_html/
+          scp -r -P 21098 * junecqhi@198.54.114.247:/home/junecqhi/public_html/ && git pull
