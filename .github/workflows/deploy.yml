@@ -18,7 +18,7 @@ jobs:
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
           ssh-passphrase: ${{ secrets.SSH_PASSPHRASE }}
-          ssh-known-hosts: |
+          ssh-know-hosts: |
             198.54.114.247 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDmhxEyorLX52fJcRKP77p4YK0p2HApk5FhgXHnIvsYxzg+99qTDRxBtzzUU2IUjgG+Q7eeoHTq5R4zP2a2rG0T8cQ9iqvDRXyKfcFLjHDEr/f7efmmd+ZxeBso1qh2mF33y24x1LLqrYhDMMJXiYfjT/+YkaX/x98nWjs1QBBmSEsUQhKmWGaWlU1DoEjeBk4Lg4lsLZrvPqNswHbul7IOpaG+joOv95In/sknQ0kegWVzEGgnbCoi/BUNbwhyy3ZG9vob6Yxr54SOKWSPoFE8oY+wRzA0ztzXW1biOIFCLMSlXC1/xF9c04uNoA/3lTwDlPcBu3Rx+MbuoMy/ivV7  # Replace with your server's IP and SSH key
           
       - name: Deploy to Namecheap Server
