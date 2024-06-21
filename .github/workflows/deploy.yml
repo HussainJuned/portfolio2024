@@ -21,7 +21,7 @@ jobs:
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
           # Uncomment the following line if you need to provide the passphrase
-          ssh-passphrase: ${{ secrets.SSH_PASSPHRASE }}
+          ssh-add-cmd: ssh-add - <<< "${{ secrets.SSH_PASSPHRASE }}"
 
       - name: SSH connection test
         run: ssh -o StrictHostKeyChecking=no -p 21098 username@198.54.114.247 echo "SSH connection successful"
