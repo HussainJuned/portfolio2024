@@ -17,6 +17,11 @@ jobs:
         uses: webfactory/ssh-agent@v0.9.0 # Replace with the latest version that supports Node.js 20
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      - name: Add server to known_hosts
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan -p 21098 198.54.114.247 >> ~/.ssh/known_hosts
           
       - name: Deploy to Namecheap Server
         run: |
