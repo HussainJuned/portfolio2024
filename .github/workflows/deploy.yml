@@ -12,6 +12,9 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4  # Replace with the latest version that supports Node.js 20
+        
+      - name: Prepare SSH directory
+        run: mkdir -p ~/.ssh
       
       - name: Add SSH known hosts
         run: |
