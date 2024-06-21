@@ -309,8 +309,8 @@ button#menu-close-btn {
     background-image: url("/images/homeNannerShape.png");
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: 34% 30px;
-    animation: 3s ease 0s infinite normal none running moveIn;
+    /* background-position: 34% 30px; */
+    animation: 5s ease 0s infinite normal none running moveIn;
 }
 
 .hero-left h1 {
@@ -418,7 +418,7 @@ button#menu-close-btn {
     align-items: center;
     text-align: center;
     flex-direction: column;
-    padding: 0px 15px;
+    padding: 0px 1.2rem;
     opacity: 0;
     transition: all 500ms ease 0s;
 }
@@ -588,8 +588,6 @@ li:hover .styling-list::after,
     cursor: pointer;
 }
 
-.skills img {}
-
 .skills h2 {
     margin: 3.8rem 0px 3rem;
     text-align: center;
@@ -676,7 +674,7 @@ li:hover .styling-list::after,
 }
 
 .icon-bg-orange {
-    background-color: var(--ligt-bg-color);
+    background-color: #ecf7ff;
     padding: 10px;
     border-radius: 15%;
 }
@@ -709,12 +707,14 @@ li:hover .styling-list::after,
 .contact-me-box-form input,
 textarea {
     width: 100%;
-    padding: 12px;
-    border: 1px solid rgba(255, 107, 0, 0.5);
-    border-radius: 6px;
-    line-height: 1.7;
-    font-size: 16px;
-    color: rgb(33, 37, 41);
+    padding: 0.7rem;
+    border: 2px solid #075695;
+    border-radius: 4px;
+    line-height: 1.4rem;
+    font-size: 1rem;
+    font-family: 'Jost', sans-serif;
+    transition: all 0.3s ease-out 0s;
+    /* color: rgb(33, 37, 41); */
 }
 
 .contact-me-box-form .btn {
@@ -759,6 +759,12 @@ textarea {
     }
 }
 
+
+.cursor {
+    animation: cursorBlink 400ms infinite;
+    font-size: 2.5rem;
+}
+
 @keyframes cursorBlink {
 
     0%,
@@ -771,9 +777,24 @@ textarea {
     }
 }
 
-.cursor {
-    animation: cursorBlink 400ms infinite;
-    font-size: 2.5rem;
+.gradient-background {
+    background: linear-gradient(313deg, #5c0282, #075695, #718da3);
+    background-size: 180% 180%;
+    animation: gradient-animation 4s ease infinite;
+}
+
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 /* End Animation */
