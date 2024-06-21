@@ -20,4 +20,4 @@ jobs:
           
       - name: Deploy to Namecheap Server
         run: |
-          scp -r * junecqhi@198.54.114.247:/home/junecqhi/public_html/
+          scp -r -P 21098 * junecqhi@198.54.114.247:/home/junecqhi/public_html/
