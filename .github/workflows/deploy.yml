@@ -12,10 +12,13 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4  # Replace with the latest version that supports Node.js 20
+
+      - name: Create SSH directory if not exists
+        run: |
+          mkdir -p ~/.ssh || true
       
       - name: Set up SSH key
         run: |
-          mkdir -p ~/.ssh
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan -t rsa 198.54.114.247 >> ~/.ssh/known_hosts
