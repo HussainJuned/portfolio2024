@@ -15,8 +15,8 @@ jobs:
         
       - name: Prepare SSH directory
         run: mkdir -p ~/.ssh
-
-        - name: Debug SSH keyscan
+        
+      - name: Debug SSH keyscan
         run: ssh-keyscan -t rsa 198.54.114.247
       
       - name: Add SSH known hosts
