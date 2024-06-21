@@ -12,7 +12,13 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4  # Replace with the latest version that supports Node.js 20
-
+      
+      - name: Add SSH known hosts
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan -t rsa 198.54.114.247 >> ~/.ssh/known_hosts
+          chmod 644 ~/.ssh/known_hosts
+          
       - name: Set up SSH key
         uses: webfactory/ssh-agent@v0.5.3
         with:
