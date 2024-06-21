@@ -21,7 +21,10 @@ jobs:
           mkdir -p ~/.ssh
           ssh-keyscan -t rsa 198.54.114.247 >> ~/.ssh/known_hosts
           chmod 644 ~/.ssh/known_hosts
-          
+
+      - name: Debug SSH keyscan
+        run: ssh-keyscan -t rsa 198.54.114.247
+      
       - name: Set up SSH key
         uses: webfactory/ssh-agent@v0.5.3
         with:
