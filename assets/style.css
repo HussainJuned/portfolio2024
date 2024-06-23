@@ -76,9 +76,9 @@ h2 {
 
 .portfolio {
     grid-area: portfolio;
-    min-height: calc(100vh - 70px);
-    padding-top: 2rem;
-    padding-bottom: 3rem;
+    /* min-height: calc(100vh - 70px); */
+    /* padding-top: 2rem; */
+    padding-bottom: 1rem;
 }
 
 
@@ -107,7 +107,7 @@ h2 {
 
 .skills {
     grid-area: skills;
-    min-height: calc(100vh - 200px);
+    /* min-height: calc(100vh - 200px); */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -449,7 +449,7 @@ button#menu-close-btn {
 }
 
 .edu-exp {
-    min-height: 100svh;
+    /* min-height: 100svh; */
 }
 
 .education h3 {
@@ -613,13 +613,13 @@ li:hover .styling-list::after,
 }
 
 .skills li:hover::before {
-    animation: 0.4s ease 0s 1 normal none running shine;
+    animation: 0.8s ease 0s 1 normal none running shine;
 }
 
 .contact-me {
     grid-area: contact-me;
     height: auto;
-    min-height: calc(-200px + 100vh);
+    /* min-height: calc(-200px + 100vh); */
 }
 
 .contact-me h2 {
